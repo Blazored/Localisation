@@ -25,6 +25,7 @@ steps:
   displayName: 'Generating Nuget Package... '
   inputs:
     command: pack
+
     arguments: --no-build
     packagesToPack: src/Blazored.Localisation/Blazored.Localisation.csproj
     configuration: $(buildConfiguration)
