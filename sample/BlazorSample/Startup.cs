@@ -1,12 +1,12 @@
 using Blazored.Localisation;
-using Microsoft.AspNetCore.Blazor.Builder;
+using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BlazorSample
 {
     public class Startup
     {
-        public void Configure(IBlazorApplicationBuilder app)
+        public void Configure(IComponentsApplicationBuilder app)
         {
             app.UseBlazoredLocalisation();
             app.AddComponent<App>("app");
