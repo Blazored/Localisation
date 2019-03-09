@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28705.295
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6B19B6E5-F52F-4255-83DA-0AA895501327}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazored.Localisation", "src\Blazored.Localisation\Blazored.Localisation.csproj", "{D72FBAA9-4395-4EA0-AC44-2F69A56F8AB3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{C27C5151-5D31-4FB2-8023-4DB1902ADF5D}"
@@ -50,7 +48,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D72FBAA9-4395-4EA0-AC44-2F69A56F8AB3} = {6B19B6E5-F52F-4255-83DA-0AA895501327}
 		{EB56E281-BDAD-4CE0-9E57-58804357F541} = {C27C5151-5D31-4FB2-8023-4DB1902ADF5D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

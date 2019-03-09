@@ -8,7 +8,8 @@ namespace Blazored.Localisation
     {
         public static void UseBlazoredLocalisation(this IComponentsApplicationBuilder app)
         {
-            var browserLocale = ((IJSInProcessRuntime)JSRuntime.Current).Invoke<string>("Blazored.Localisation.GetBrowserLocale");
+            var jsRuntime = app.Services.GetService(typeof(IJSRuntime));
+            var browserLocale = ((IJSInProcessRuntime)jsRuntime).Invoke<string>("Blazored.Localisation.GetBrowserLocale");
             var culture = new CultureInfo(browserLocale);
 
             CultureInfo.CurrentCulture = culture;
