@@ -12,8 +12,8 @@ namespace Blazored.Localisation
             var browserLocale = ((IJSInProcessRuntime)jsRuntime).Invoke<string>("Blazored.Localisation.GetBrowserLocale");
             var culture = new CultureInfo(browserLocale);
 
-            CultureInfo.CurrentCulture = culture;
-            CultureInfo.CurrentUICulture = culture;
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
         }
     }
 }
