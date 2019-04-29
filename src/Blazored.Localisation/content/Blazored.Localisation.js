@@ -22,6 +22,12 @@ var Blazored;
                     || navigator['browserLanguage']
                     || 'en';
             };
+            Localisation.prototype.GetBrowserTimeZoneOffset = function () {
+                return new Date().getTimezoneOffset();
+            };
+            Localisation.prototype.GetBrowserTimeZoneIdentifier = function () {
+                return Intl.DateTimeFormat().resolvedOptions().timeZone;
+            };
             return Localisation;
         }());
         function Load() {
@@ -39,4 +45,4 @@ var Blazored;
     })(Localisation = Blazored.Localisation || (Blazored.Localisation = {}));
 })(Blazored || (Blazored = {}));
 Blazored.Localisation.Load();
-//# sourceMappingURL=Blazored.Localisation.js.map
+//# sourceMappingURL=blazored.Localisation.js.map

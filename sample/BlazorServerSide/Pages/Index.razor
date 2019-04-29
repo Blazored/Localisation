@@ -1,0 +1,40 @@
+﻿@using System.Globalization
+@inject Blazored.Localisation.Services.IBrowserDateTimeProvider browserDateTimeProvider
+@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<hr />
+<h3>Culture Info</h3>
+<p>Current Culture: <strong>@CultureInfo.CurrentUICulture.DisplayName</strong></p>
+<p>Current Culture Code: <strong>@CultureInfo.CurrentCulture.Name</strong></p>
+<p>Current UI Culture Code: <strong>@CultureInfo.CurrentUICulture.Name</strong></p>
+<p>Current Culture Currency Symbol: <strong>@CultureInfo.CurrentUICulture.NumberFormat.CurrencySymbol</strong></p>
+<p>Current Culture DateTime Pattern: <strong>@CultureInfo.CurrentUICulture.DateTimeFormat.FullDateTimePattern</strong></p>
+<hr />
+<h3>TimeZone Info</h3>
+<p>The current time zone is: <strong>@currentTimeZone</strong></p>
+<p>The current time zone offset is: <strong>@currentTimeZoneOffSet</strong></p>
+<p>The current local time is: <strong>@currentLocalTime</strong></p>
+
+@functions {
+
+    string currentTimeZone = "";
+    TimeSpan currentTimeZoneOffSet = new TimeSpan();
+    string currentLocalTime { get; set; } = "";
+
+    protected override async Task OnAfterRenderAsync()
+    {
+        var browserDateTime = await browserDateTimeProvider.GetInstance();
+
+        currentTimeZone = browserDateTime.LocalTimeZoneInfo.DisplayName;
+        currentTimeZoneOffSet = browserDateTime.LocalTimeZoneInfo.GetUtcOffset(DateTime.Now);
+        currentLocalTime = browserDateTime.Now.ToString();
+        StateHasChanged();
+    }
+
+}

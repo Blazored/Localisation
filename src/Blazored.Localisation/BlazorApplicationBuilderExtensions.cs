@@ -1,5 +1,5 @@
-using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.JSInterop;
+using Microsoft.AspNetCore.Components.Builder;
 using System.Globalization;
 
 namespace Blazored.Localisation

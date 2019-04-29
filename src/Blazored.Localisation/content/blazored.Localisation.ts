@@ -6,6 +6,14 @@ namespace Blazored.Localisation {
                 || navigator['browserLanguage']
                 || 'en';
         }
+
+        public GetBrowserTimeZoneOffset(): number {
+            return new Date().getTimezoneOffset();
+        }
+
+        public GetBrowserTimeZoneIdentifier(): string {
+            return Intl.DateTimeFormat().resolvedOptions().timeZone;
+        }
     }
 
     export function Load(): void {
