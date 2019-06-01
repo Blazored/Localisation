@@ -14,11 +14,11 @@
     <AssemblyName>Blazored.Localisation</AssemblyName>
     <RootNamespace>Blazored.Localisation</RootNamespace>
     <PackageId>Blazored.Localisation</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Authors>Chris Sainty</Authors>
     <Description>A library to provide localisation in client-side Blazor applications</Description>
     <Copyright>Copyright 2018 (c) Chris Sainty. All rights reserved.</Copyright>
-    <PackageLicenseUrl>https://github.com/Blazored/Localisation/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Blazored/Localisation</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Blazored/Localisation</RepositoryUrl>
     <PackageTags>blazor localisation localization csharp blazored</PackageTags>
