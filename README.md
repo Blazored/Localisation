@@ -54,7 +54,7 @@ Example**
 <p>The current time zone offset is: <strong>@currentTimeZoneOffSet</strong></p>
 <p>The current local time is: <strong>@currentLocalTime</strong></p>
 
-@functions {
+@code {
 
     string currentTimeZone;
     TimeSpan currentTimeZoneOffSet;
@@ -92,7 +92,7 @@ To get times using the correct timezone information you will need to request an 
 
 <p>The current local time is: <strong>@currentLocalTime</strong></p>
 
-@functions {
+@code {
 
     string currentLocalTime = "";
 
