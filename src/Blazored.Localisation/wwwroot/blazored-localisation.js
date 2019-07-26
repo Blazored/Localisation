@@ -45,4 +45,4 @@ var Blazored;
     })(Localisation = Blazored.Localisation || (Blazored.Localisation = {}));
 })(Blazored || (Blazored = {}));
 Blazored.Localisation.Load();
-//# sourceMappingURL=blazored.Localisation.js.map
+//# sourceMappingURL=blazored-localisation.js.map
