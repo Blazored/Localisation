@@ -17,7 +17,7 @@ namespace Blazored.Localisation {
     }
 
     export function Load(): void {
-        const localisation = {
+        const localisation: any = {
             Localisation: new Localisation()
         };
 
