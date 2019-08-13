@@ -2,13 +2,10 @@
 @inject Blazored.Localisation.Services.IBrowserDateTimeProvider browserDateTimeProvider
 @page "/"
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+<h1>Blazored Localisation Sample</h1>
 
 <hr />
+
 <h3>Culture Info</h3>
 <p>Current Culture: <strong>@CultureInfo.CurrentUICulture.DisplayName</strong></p>
 <p>Current Culture Code: <strong>@CultureInfo.CurrentCulture.Name</strong></p>
@@ -27,7 +24,7 @@ Welcome to your new app.
     TimeSpan currentTimeZoneOffSet;
     string currentLocalTime;
 
-    protected override async Task OnInitAsync()
+    protected override async Task OnInitializedAsync()
     {
         var browserDateTime = await browserDateTimeProvider.GetInstance();
 

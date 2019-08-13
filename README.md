@@ -1,5 +1,5 @@
 # Blazored Localisation
-A library to provide localisation in client-side Blazor applications and time zone information in server-side Blazor
+A library to provide localisation in Blazor WebAssembly apps and time zone information in Blazor Server apps
 
 [![Build Status](https://dev.azure.com/blazored/Localisation/_apis/build/status/Blazored.Localisation?branchName=master)](https://dev.azure.com/blazored/Localisation/_build/latest?definitionId=2&branchName=master)
 
@@ -15,7 +15,13 @@ Or via the Visual Studio package manager.
 
 ### Setup
 
-**Client-side Blazor**
+**Blazor WebAssembly**
+Add the following script tag to your `index.html`.
+
+```html
+<script src="_content/Blazored.Localisation/blazored-localisation.js"></script>
+```
+
 Blazored Localisation requires the following lines added to your _startup.cs_. 
 
 ```csharp
@@ -72,7 +78,7 @@ Example**
 }
 ```
 
-**Server-side Blazor**
+**Blazor Server**
 Setting of the Culture is currently not available for server-side Blazor applications, only the `IBrowserDateTime` service is available.
 
 Blazored Localisation requires the following lines added to your _startup.cs_.
