@@ -9,7 +9,7 @@
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
 
     <PackageId>Blazored.Localisation</PackageId>
-    <Version>1.1.4</Version>
+    <Version>1.1.5</Version>
     <Authors>Chris Sainty</Authors>
     <Description>A library to provide localisation in client-side Blazor applications</Description>
     <Copyright>Copyright 2018 (c) Chris Sainty. All rights reserved.</Copyright>
