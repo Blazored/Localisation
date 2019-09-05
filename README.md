@@ -16,12 +16,6 @@ Or via the Visual Studio package manager.
 ### Setup
 
 **Blazor WebAssembly**
-Add the following script tag to your `index.html`.
-
-```html
-<script src="_content/Blazored.Localisation/blazored-localisation.js"></script>
-```
-
 Blazored Localisation requires the following lines added to your _startup.cs_. 
 
 ```csharp
