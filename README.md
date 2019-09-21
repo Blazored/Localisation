@@ -96,13 +96,15 @@ To get times using the correct timezone information you will need to request an 
 
     string currentLocalTime = "";
 
-    protected override async Task OnAfterRenderAsync()
-    {
-        var browserDateTime = await browserDateTimeProvider.GetInstance();
-        currentLocalTime = browserDateTime.Now.ToString();
-        StateHasCahnged();
-    }
-
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender) // Remove the firstRender check if you want the current local time displayed to continuously update.
+		{   // Leave the above firstRender check in place to ensure that the call to StateHasChanged() does not trigger an endless update loop.
+			var browserDateTime = await browserDateTimeProvider.GetInstance();
+			currentLocalTime = browserDateTime.Now.ToString();
+			StateHasChanged();
+		}
+	}
 }
 ``` 
 
