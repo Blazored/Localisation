@@ -16,8 +16,9 @@ Or via the Visual Studio package manager.
 ### Setup
 
 **Blazor WebAssembly**
-Blazored Localisation requires the following lines added to your _startup.cs_. 
+Blazored Localisation requires the following lines added to your _startup.cs_ and _index.html_ files.
 
+_startup.cs_:
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -28,6 +29,10 @@ public void Configure(IComponentsApplicationBuilder app)
 {
     app.UseBlazoredLocalisation(); // This adds the middleware to setup the correct Culture Info based on the users browser.
 }
+```
+_index.html_:
+```html
+<script src="_content/Blazored.Localisation/blazored-localisation.js"></script>
 ```
 
 Culture is set app wide via the middleware registered in the `Configure` method above. This will set the `CultureInfo.CurrentCulture` and `CultureInfo.CurrentUICulture` based on the language settings of the clients browser. This will mean dates, times and currency should reflect what the end users browser has configured. This however does not take into account timezones. 
