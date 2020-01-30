@@ -16,18 +16,20 @@ Or via the Visual Studio package manager.
 ### Setup
 
 **Blazor WebAssembly**
-Blazored Localisation requires the following lines added to your _startup.cs_ and _index.html_ files.
+Update you're _program.cs_ to call the `AddBlazoredLocalisation` method on the service collection. You will then need to build the WebAssemblyHostBuilder in order to call the `InitializeBlazoredLocalisation` method on the WebAssemblyHost.
 
-_startup.cs_:
+_program.cs_:
 ```csharp
-public void ConfigureServices(IServiceCollection services)
+public static async Task Main(string[] args)
 {
-    services.AddBlazoredLocalisation(); // This adds the IBrowserDateTimeProvider to the DI container
-}
+    var builder = WebAssemblyHostBuilder.CreateDefault(args);
+    builder.Services.AddBlazoredLocalisation();
+    builder.RootComponents.Add<App>("app");
 
-public void Configure(IComponentsApplicationBuilder app)
-{
-    app.UseBlazoredLocalisation(); // This adds the middleware to setup the correct Culture Info based on the users browser.
+    var host = builder.Build();
+    host.InitializeBlazoredLocalization();
+            
+    await host.RunAsync();
 }
 ```
 _index.html_:

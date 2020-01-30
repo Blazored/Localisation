@@ -1,16 +1,21 @@
-﻿using Microsoft.AspNetCore.Blazor.Hosting;
+﻿using Blazored.Localisation;
+using Microsoft.AspNetCore.Blazor.Hosting;
+using System.Threading.Tasks;
 
 namespace BlazorSample
 {
     public class Program
     {
-        public static IWebAssemblyHostBuilder CreateHostBuilder(string[] args) =>
-            BlazorWebAssemblyHost.CreateDefaultBuilder()
-                .UseBlazorStartup<Startup>();
-
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var builder = WebAssemblyHostBuilder.CreateDefault(args);
+            builder.Services.AddBlazoredLocalisation();
+            builder.RootComponents.Add<App>("app");
+
+            var host = builder.Build();
+            host.InitializeBlazoredLocalization();
+            
+            await host.RunAsync();
         }
     }
 }
